@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to HTML Editor</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class=" text-danger border border-dark p-5">
+        <div class="row">
+                <div class="col">
+                    {{form.media}}
+                    {{form.as_p}}
+                <input type="submit" class="btn btn-info" onclick="TextConvert()">
+                </div>
+
+                <div class="col-4">
+                    <p>HTML Editor :</p>
+                    <div class="form-group">
+                        <textarea class="form-control " rows="16" id='htmldata'>
+                        </textarea>
+                    </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    function TextConvert() {
+        var x = CKEDITOR.instances['id_body'].getData();
+        var y = document.getElementById('htmldata');
+        y.innerHTML = x;
+    }
+</script>
+
